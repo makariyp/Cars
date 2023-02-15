@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import web.model.Car;
+import web.service.CarService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class CarController {
 
     @GetMapping(value = "/cars")
     public String printCars(@RequestParam(defaultValue = "5") Integer count, ModelMap model) {
-        model.addAttribute("messages", list.stream().map(Car::toStringArray).limit(count).toList());
+        model.addAttribute("messages", CarService.getLimitCars(list, count));
         return "cars";
     }
 }
