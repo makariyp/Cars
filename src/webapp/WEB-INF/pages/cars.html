@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Series</th>
+        </tr>
+        <th:block th:each="msg : ${messages}">
+            <tr>
+                <th:block th:each="m : ${msg}">
+                <td th:text="${m}"></td>
+                </th:block>
+            </tr>
+        </th:block>
+    </table>
+</div>
+</body>
+</html>
