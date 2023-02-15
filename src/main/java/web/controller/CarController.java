@@ -1,5 +1,6 @@
 package web.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,13 +13,8 @@ import java.util.List;
 
 @Controller
 public class CarController {
-    private List<Car> list = new ArrayList<>();
-
-    public CarController() {
-        for (int i = 0; i < 5; i++) {
-            list.add(new Car("Car" + i, 2000 + i, i));
-        }
-    }
+    @Autowired
+    private List<Car> list;
 
     @GetMapping(value = "/cars")
     public String printCars(@RequestParam(defaultValue = "5") Integer count, ModelMap model) {
