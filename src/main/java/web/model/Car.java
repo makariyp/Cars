@@ -13,12 +13,15 @@ public class Car {
         this.year = year;
         this.series = series;
     }
+    public String  getModel(){
+        return model;
+    }
 
-    public List<String> toStringArray() {
-        List<String> list = new ArrayList<>();
-        list.add(model);
-        list.add(year.toString());
-        list.add(series.toString());
-        return list;
+    public Integer getYear() {
+        return year;
+    }
+
+    public Integer getSeries() {
+        return series;
     }
 }
